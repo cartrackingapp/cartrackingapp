@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Mileage Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    h2 {
+      color: #007bff;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .form-group button {
+      display: inline-block;
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .form-group button:hover {
+      background-color: #0056b3;
+    }
+    .message {
+      margin-top: 15px;
+      padding: 10px;
+      color: white;
+      border-radius: 5px;
+      display: none;
+    }
+    .message.success {
+      background-color: #28a745;
+    }
+    .message.error {
+      background-color: #dc3545;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Car Mileage Tracker</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Record Mileage</h2>
+      <div class="form-group">
+        <label for="currentMileage">Current Mileage:</label>
+        <input type="number" id="currentMileage" placeholder="Enter current mileage">
+      </div>
+      <div class="form-group">
+        <label for="endMileage">End Mileage:</label>
+        <input type="number" id="endMileage" placeholder="Enter end mileage">
+      </div>
+      <div class="form-group">
+        <button onclick="saveMileage()">Save Mileage</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Odometer Records</h2>
+      <div class="form-group">
+        <label for="odometerReading">Odometer Reading Before Fuel Fill-Up:</label>
+        <input type="number" id="odometerReading" placeholder="Enter odometer reading">
+      </div>
+      <div class="form-group">
+        <label for="fuelAmount">Fuel Amount (Liters):</label>
+        <input type="number" id="fuelAmount" placeholder="Enter fuel amount">
+      </div>
+      <div class="form-group">
+        <label for="fuelPrice">Fuel Price:</label>
+        <input type="number" id="fuelPrice" placeholder="Enter fuel price">
+      </div>
+      <div class="form-group">
+        <button onclick="saveOdometer()">Save Odometer Record</button>
+      </div>
+    </section>
+
+    <div id="message" class="message"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
